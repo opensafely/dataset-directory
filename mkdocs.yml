@@ -1,0 +1,6 @@
+site_name: Opensafely Phenotype Wiki
+theme:
+  name: material
+plugins:
+  - tags:
+      tags_file: tags.md
