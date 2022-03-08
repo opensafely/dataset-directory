@@ -272,9 +272,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#existing-studies-using-opensafely" class="md-nav__link">
-    Existing Studies using OpenSAFELY
+  <a href="#existing-opensafely-studies" class="md-nav__link">
+    Existing OpenSAFELY Studies
   </a>
+  
+    <nav class="md-nav" aria-label="Existing OpenSAFELY Studies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inhaled-corticosteroids-and-risk-of-covid-19-death" class="md-nav__link">
+    Inhaled corticosteroids and risk of COVID-19 death
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -369,8 +382,64 @@
   
   
     <li class="md-nav__item">
+      <a href="../../phenotypes/asthma_resolved/" class="md-nav__link">
+        asthma_resolved()
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../phenotypes/has_asthma/" class="md-nav__link">
         has_asthma()
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../phenotypes/has_asthma_diagnosis/" class="md-nav__link">
+        has_asthma_diagnosis()
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../phenotypes/hospitalised_with_asthma/" class="md-nav__link">
+        hospitalised_with_asthma()
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../phenotypes/receiving_asthma_medication/" class="md-nav__link">
+        receiving_asthma_medication()
       </a>
     </li>
   
@@ -445,9 +514,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#existing-studies-using-opensafely" class="md-nav__link">
-    Existing Studies using OpenSAFELY
+  <a href="#existing-opensafely-studies" class="md-nav__link">
+    Existing OpenSAFELY Studies
   </a>
+  
+    <nav class="md-nav" aria-label="Existing OpenSAFELY Studies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inhaled-corticosteroids-and-risk-of-covid-19-death" class="md-nav__link">
+    Inhaled corticosteroids and risk of COVID-19 death
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -506,20 +588,27 @@
 
 <h1 id="athsma">Athsma</h1>
 <h2 id="introduction">Introduction</h2>
+<p><em>(idea: populate using NHS API)</em></p>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 <h2 id="methodological-notes">Methodological Notes</h2>
-<p>There are a number of means by which one may ascerain a patient having asthma. Those supported within OpenSAFELY are : <strong>a</strong>, <strong>b</strong>, and <strong>c</strong>; represented as phenotypes <strong>x</strong>, <strong>y</strong>, and <strong>z</strong>. Of these, <strong>a</strong> is generally considered the most reliable, but consideration must also be given to the effect of <em>p</em> on <em>q</em>. A combined phenotype of <strong>has_asthma</strong> is provided which should suffice for must purposes.</p>
+<p>There are a number of means by which one may ascerain a patient having asthma. Those supported within OpenSAFELY are excplicit coding on an asthma diagnosis, prescription of asthma medication, and record of hospitalisation with asthma; represented as phenotypes <a href="../../phenotypes/has_asthma/">has_asthma_diagnosis</a>, <a href="../../phenotypes/has_asthma/">receiving_asthma_medication</a>, and <a href="../../phenotypes/has_asthma/">hospitalised_with_asthma</a>. Of these, <a href="../../phenotypes/has_asthma/">has_asthma_diagnosis</a> is generally considered the most reliable, but consideration must also be given to resolved cases of (usually childhood) asthma. A combined phenotype of <a href="../../phenotypes/has_asthma/">has_asthma</a> is provided which takes these into account and should suffice for most purposes.</p>
 <h2 id="phenotypes">Phenotypes</h2>
 <ul>
 <li><a href="../../phenotypes/has_asthma/">has_asthma</a></li>
-<li><a href="">bar</a></li>
-<li><a href="">baz</a></li>
+<li><a href="../../phenotypes/receiving_asthma_medication/">receiving_asthma_medication</a></li>
+<li><a href="../../phenotypes/has_asthma_diagnosis/">has_asthma_diagnosis</a></li>
+<li><a href="../../phenotypes/hospitalised_with_asthma/">hospitalised_with_asthma</a></li>
+<li><a href="../../phenotypes/asthma_resolved/">asthma_resolved</a></li>
 </ul>
 <h2 id="codelists">Codelists</h2>
 <ul>
 <li><a href="https://www.opencodelists.org/codelist/primis-covid19-vacc-uptake/astadm/">Asthma Admission Codes</a> ❓ <em><abbr title="Has been signed off">Signed-off</abbr></em> | ✅ <em><abbr title="This code list has been built from a verified external reference list">Externally-verified</abbr></em></li>
 <li><a href="https://www.opencodelists.org/codelist/opensafely/asthma-diagnosis-snomed/">Asthma Diagnosis</a> ❓ <em><abbr title="Has been signed off">Signed-off</abbr></em> | ✅ <em><abbr title="This code list has been built from a verified external reference list">Externally-verified</abbr></em></li>
 <li><a href="https://www.opencodelists.org/codelist/opensafely/asthma-inhaler-salbutamol-medication/">Asthma Inhaler Salbutamol Medication</a> ✅ <em><abbr title="Has been signed off">Signed-off</abbr></em> | ❌ <em><abbr title="This code list has been built from a verified external reference list">Externally-verified</abbr></em></li>
+<li><a href="https://www.opencodelists.org/codelist/opensafely/current-asthma/2020-05-06/">Current Asmtha</a></li>
+<li><a href="https://www.opencodelists.org/codelist/opensafely/asthma-annual-review-qof/33eeb7da/">Asthma annual review <abbr title="Quality and Outcomes Framework">QOF</abbr></a></li>
+<li><a href="https://www.opencodelists.org/codelist/opensafely/peak-expiratory-flow-rate-pefr-codes/6110b805/">Peak expiratory flow rate (PEFR) codes</a></li>
+<li><a href="https://www.opencodelists.org/builder/132f9e70/">Asthma resolved codes</a> ❌ <em><abbr title="Has been signed off">Signed-off</abbr></em> | ❌ <em><abbr title="This codelist has not yet been validated or signed off, and should not be considered ready for use">Draft</abbr></em></li>
 </ul>
 <h2 id="quality-outcomes-framework-indicators">Quality Outcomes Framework Indicators</h2>
 <p><abbr title="Quality and Outcomes Framework">QOF</abbr> indicators pertaining to Asthma are defined by <abbr title="National Institute for Clinical Excellence">NICE</abbr> as follows:</p>
@@ -542,10 +631,11 @@
 </li>
 </ul>
 <p>Measurement of these indicators within OpenSAFELY has been performed in <a href="">this study</a></p>
-<h2 id="existing-studies-using-opensafely">Existing Studies using OpenSAFELY</h2>
+<h2 id="existing-opensafely-studies">Existing OpenSAFELY Studies</h2>
+<h3 id="inhaled-corticosteroids-and-risk-of-covid-19-death">Inhaled corticosteroids and risk of COVID-19 death</h3>
 <ul>
-<li><a href="">"Towards a Lorem ipsum dolor sit amet, consectetur adipiscing elit. Smith et al, Journal of Boilerplate Studies 69:420"</a></li>
-<li><a href="">"Novel approaches to irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Jones et al, Journal of Boilerplate Studies 69:420"</a></li>
+<li><a href="https://github.com/opensafely/ics-research">GitHub Repository</a></li>
+<li>Paper - <a href="https://doi.org/10.1016/S2213-2600(20)30415-X">Schultze A, Walker AJ, MacKenna B, Morton CE, Bhaskaran K, Brown JP, Rentsch CT, Williamson E, Drysdale H, Croker R, Bacon S. Risk of COVID-19-related death among patients with chronic obstructive pulmonary disease or asthma prescribed inhaled corticosteroids: an observational cohort study using the OpenSAFELY platform. The Lancet Respiratory Medicine. 2020 Nov 1;8(11):1106-20.</a></li>
 </ul>
 <h2 id="references">References</h2>
 <ul>

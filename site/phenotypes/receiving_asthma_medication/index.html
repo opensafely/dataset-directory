@@ -13,7 +13,7 @@
     
     
       
-        <title>has_asthma() - Opensafely Phenotype Wiki</title>
+        <title>receiving_asthma_medication() - Opensafely Phenotype Wiki</title>
       
     
     
@@ -59,7 +59,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#has_asthma" class="md-skip">
+        <a href="#receiving_asthma_medication" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +92,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              has_asthma()
+              receiving_asthma_medication()
             
           </span>
         </div>
@@ -291,6 +291,48 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../has_asthma/" class="md-nav__link">
+        has_asthma()
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../has_asthma_diagnosis/" class="md-nav__link">
+        has_asthma_diagnosis()
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hospitalised_with_asthma/" class="md-nav__link">
+        hospitalised_with_asthma()
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -303,12 +345,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          has_asthma()
+          receiving_asthma_medication()
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        has_asthma()
+        receiving_asthma_medication()
       </a>
       
         
@@ -407,48 +449,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../has_asthma_diagnosis/" class="md-nav__link">
-        has_asthma_diagnosis()
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../hospitalised_with_asthma/" class="md-nav__link">
-        hospitalised_with_asthma()
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../receiving_asthma_medication/" class="md-nav__link">
-        receiving_asthma_medication()
-      </a>
     </li>
   
 
@@ -596,15 +596,9 @@
 
 
 
-<h1 id="has_asthma">has_asthma()</h1>
+<h1 id="receiving_asthma_medication">receiving_asthma_medication()</h1>
 <h2 id="introduction">Introduction</h2>
-<p>This phenotype infers whether a patient has asthma based on four other phenotypes:</p>
-<ul>
-<li><a href="../has_asthma_diagnosis/">has_asthma_diagnosis</a> - primary care diagnosis code</li>
-<li><a href="../receiving_asthma_medication/">receiving_asthma_medication</a> - patient has active prescription for asthma medication</li>
-<li><a href="../hospitalised_with_asthma/">hospitalised_with_asthma</a> - admission to hospital with an asthma diagnosis code</li>
-<li><a href="../asthma_resolved/">asthma_resolved</a> - NOT asthma resolved</li>
-</ul>
+<p>This phenotype infers whether a patient has received a prescription for asthma-related medication in the preceeding three months from the provided date.</p>
 <h2 id="parameters">Parameters</h2>
 <p><em>on_or_after</em> - date after which determination of asthma status should be made</p>
 <h2 id="phenotype-validation-reports">Phenotype validation reports</h2>
@@ -614,17 +608,12 @@
 <li><a href="https://github.com/opensafely/asthma_sro">NHS Service Restoration Observatory - Asthma</a></li>
 </ul>
 <h2 id="implementation">Implementation</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">NOT</span> <span class="n">asthma_resolved</span><span class="p">(</span><span class="n">date</span><span class="p">)</span> <span class="n">AND</span> <span class="p">(</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>  <span class="n">has_asthma_diagnosis</span><span class="p">(</span><span class="n">date</span><span class="p">)</span> <span class="n">OR</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>  <span class="n">receiving_asthma_medication</span><span class="p">(</span><span class="n">date</span><span class="p">)</span> <span class="n">OR</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>  <span class="n">hospitalised_with_asthma</span><span class="p">(</span><span class="n">date</span><span class="p">)</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">patients</span><span class="o">.</span><span class="n">with_these_medications</span><span class="p">(</span><span class="n">asthma_inhaler_salbutamol_medication</span><span class="p">,</span> <span class="n">on_or_after</span><span class="o">=</span><span class="p">(</span><span class="n">date</span> <span class="o">-</span> <span class="mi">3</span> <span class="n">months</span><span class="p">))</span> <span class="n">OR</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">patients</span><span class="o">.</span><span class="n">with_these_medications</span><span class="p">(</span><span class="n">asthma_inhaler_steroid_medication</span><span class="p">,</span> <span class="n">on_or_after</span><span class="o">=</span><span class="p">(</span><span class="n">date</span> <span class="o">-</span> <span class="mi">3</span> <span class="n">months</span><span class="p">))</span> <span class="n">OR</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">patients</span><span class="o">.</span><span class="n">with_these_medications</span><span class="p">(</span><span class="n">asthma_oral_prednisolone_medication</span><span class="p">,</span> <span class="n">on_or_after</span><span class="o">=</span><span class="p">(</span><span class="n">date</span> <span class="o">-</span> <span class="mi">3</span> <span class="n">months</span><span class="p">))</span> <span class="n">OR</span>
 </code></pre></div>
 <h2 id="codelists">Codelists</h2>
 <ul>
-<li><a href="https://www.opencodelists.org/builder/132f9e70/">Asthma resolved codes</a> ❌ <em><abbr title="Has been signed off">Signed-off</abbr></em> | ❗ <em><abbr title="This codelist has not yet been validated or signed off, and should not be considered ready for use">Draft</abbr></em></li>
-<li><a href="https://www.opencodelists.org/codelist/primis-covid19-vacc-uptake/astadm/">Asthma Admission Codes</a> ❓ <em><abbr title="Has been signed off">Signed-off</abbr></em> | ✅ <em><abbr title="This code list has been built from a verified external reference list">Externally-verified</abbr></em></li>
-<li><a href="https://www.opencodelists.org/codelist/opensafely/asthma-diagnosis-snomed/">Asthma Diagnosis</a> ❓ <em><abbr title="Has been signed off">Signed-off</abbr></em> | ✅ <em><abbr title="This code list has been built from a verified external reference list">Externally-verified</abbr></em></li>
 <li><a href="https://www.opencodelists.org/codelist/opensafely/asthma-inhaler-salbutamol-medication/">Asthma Inhaler Salbutamol Medication</a> ✅ <em><abbr title="Has been signed off">Signed-off</abbr></em> | ❌ <em><abbr title="This code list has been built from a verified external reference list">Externally-verified</abbr></em></li>
 <li><a href="https://www.opencodelists.org/codelist/opensafely/asthma-inhaler-steroid-medication/2020-04-15/">Asthma Inhaler Steroid Medication</a> ✅ <em><abbr title="Has been signed off">Signed-off</abbr></em> | ❌ <em><abbr title="This code list has been built from a verified external reference list">Externally-verified</abbr></em></li>
 <li><a href="https://www.opencodelists.org/codelist/opensafely/asthma-oral-prednisolone-medication/2020-04-27/">Asthma Oral Prednisolone Medication</a> ✅ <em><abbr title="Has been signed off">Signed-off</abbr></em> | ❌ <em><abbr title="This code list has been built from a verified external reference list">Externally-verified</abbr></em></li>
@@ -632,13 +621,16 @@
 <h2 id="fields">Fields</h2>
 <p><em>(Ideally these would link to data quality reports to each dataset/source/field)</em></p>
 <ul>
-<li><a href="https://docs.opensafely.org/dataset-systmone/">TPP</a>/<a href="https://reports.opensafely.org/reports/opensafely-tpp-database-schema/#Data-sources">S1</a>/<a href="https://reports.opensafely.org/reports/opensafely-tpp-database-schema/#CodedEvent">CodedEvent</a>/<a href="">CTV3Code</a>  --  <em><a href="https://reports.opensafely.org/reports/opensafely-tpp-database-builds/#Import-dates-and-date-coverage-for-OpenSAFELY-TPP-data-sources">updated 2022-01-28 11:00:04.417</a></em></li>
 <li><a href="https://docs.opensafely.org/dataset-systmone/">TPP</a>/<a href="https://reports.opensafely.org/reports/opensafely-tpp-database-schema/#Data-sources">S1</a>/<a href="https://reports.opensafely.org/reports/opensafely-tpp-database-schema/#MedicationIssue">MedicationIssue</a>/<a href="">MultilexDrug_ID</a>  --  <em><a href="https://reports.opensafely.org/reports/opensafely-tpp-database-builds/#Import-dates-and-date-coverage-for-OpenSAFELY-TPP-data-sources">updated 2022-01-28 11:00:04.417</a></em></li>
 <li><a href="https://docs.opensafely.org/dataset-systmone/">TPP</a>/<a href="https://reports.opensafely.org/reports/opensafely-tpp-database-schema/#Data-sources">S1</a>/<a href="https://reports.opensafely.org/reports/opensafely-tpp-database-schema/#MedicationDictionary">MedicationDictionary</a>/<a href="">DMD_ID</a>  --  <em><a href="https://reports.opensafely.org/reports/opensafely-tpp-database-builds/#Import-dates-and-date-coverage-for-OpenSAFELY-TPP-data-sources">updated 2022-01-28 11:00:04.417</a></em></li>
-<li><a href="https://docs.opensafely.org/dataset-apc/">SUS</a>/<a href="https://reports.opensafely.org/reports/opensafely-tpp-database-schema/#Data-sources">APCS</a>/<a href="">Der_Diagnosis_All</a>  --  <em><a href="https://reports.opensafely.org/reports/opensafely-tpp-database-builds/#Import-dates-and-date-coverage-for-OpenSAFELY-TPP-data-sources">updated 2022-02-07 09:47:31.867</a></em></li>
 </ul>
 <h2 id="references">References</h2>
 <h2 id="contributors">Contributors</h2>
+<p><em>(Those who have contributed to the phenotype AND the underlying codelists)</em></p>
+<ul>
+<li><a href="https://github.com/CarolineMorton">Caroline Morton</a></li>
+<li><a href="https://github.com/brianmackenna">Brian MacKenna</a></li>
+</ul>
 <h2 id="sign-offs">Sign-offs</h2>
 <h2 id="tests">Tests</h2>
 <p>✅ Is excellent</p>
@@ -657,7 +649,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../asthma_resolved/" class="md-footer__link md-footer__link--prev" aria-label="Previous: asthma_resolved()" rel="prev">
+        <a href="../hospitalised_with_asthma/" class="md-footer__link md-footer__link--prev" aria-label="Previous: hospitalised_with_asthma()" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -666,26 +658,11 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              asthma_resolved()
+              hospitalised_with_asthma()
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../has_asthma_diagnosis/" class="md-footer__link md-footer__link--next" aria-label="Next: has_asthma_diagnosis()" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              has_asthma_diagnosis()
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
       
     </nav>
   
