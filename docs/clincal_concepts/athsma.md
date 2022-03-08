@@ -7,23 +7,30 @@ tags:
 # Athsma
 
 ## Introduction
+_(idea: populate using NHS API)_
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 ## Methodological Notes
-There are a number of means by which one may ascerain a patient having asthma. Those supported within OpenSAFELY are : **a**, **b**, and **c**; represented as phenotypes **x**, **y**, and **z**. Of these, **a** is generally considered the most reliable, but consideration must also be given to the effect of *p* on *q*. A combined phenotype of **has_asthma** is provided which should suffice for must purposes.
+There are a number of means by which one may ascerain a patient having asthma. Those supported within OpenSAFELY are excplicit coding on an asthma diagnosis, prescription of asthma medication, and record of hospitalisation with asthma; represented as phenotypes [has_asthma_diagnosis](../phenotypes/has_asthma.md), [receiving_asthma_medication](../phenotypes/has_asthma.md), and [hospitalised_with_asthma](../phenotypes/has_asthma.md). Of these, [has_asthma_diagnosis](../phenotypes/has_asthma.md) is generally considered the most reliable, but consideration must also be given to resolved cases of (usually childhood) asthma. A combined phenotype of [has_asthma](../phenotypes/has_asthma.md) is provided which takes these into account and should suffice for most purposes.
 
 ## Phenotypes
 * [has_asthma](../phenotypes/has_asthma.md)
-* [bar]()
-* [baz]()
+* [receiving_asthma_medication](../phenotypes/receiving_asthma_medication.md)
+* [has_asthma_diagnosis](../phenotypes/has_asthma_diagnosis.md)
+* [hospitalised_with_asthma](../phenotypes/hospitalised_with_asthma.md)
+* [asthma_resolved](../phenotypes/asthma_resolved.md)
 
 ## Codelists
 * [Asthma Admission Codes](https://www.opencodelists.org/codelist/primis-covid19-vacc-uptake/astadm/) ❓ _Signed-off_ | ✅ _Externally-verified_
 * [Asthma Diagnosis](https://www.opencodelists.org/codelist/opensafely/asthma-diagnosis-snomed/) ❓ _Signed-off_ | ✅ _Externally-verified_
 * [Asthma Inhaler Salbutamol Medication](https://www.opencodelists.org/codelist/opensafely/asthma-inhaler-salbutamol-medication/) ✅ _Signed-off_ | ❌ _Externally-verified_
+* [Current Asmtha](https://www.opencodelists.org/codelist/opensafely/current-asthma/2020-05-06/)
+* [Asthma annual review QOF](https://www.opencodelists.org/codelist/opensafely/asthma-annual-review-qof/33eeb7da/)
+* [Peak expiratory flow rate (PEFR) codes](https://www.opencodelists.org/codelist/opensafely/peak-expiratory-flow-rate-pefr-codes/6110b805/)
+* [Asthma resolved codes](https://www.opencodelists.org/builder/132f9e70/) ❌ _Signed-off_ | ❌ _Draft_
 
 ## Quality Outcomes Framework Indicators
-
 QOF indicators pertaining to Asthma are defined by NICE as follows:
 
 * [AST001](https://cks.nice.org.uk/topics/asthma/goals-outcome-measures/qof-indicators/)
@@ -37,9 +44,11 @@ QOF indicators pertaining to Asthma are defined by NICE as follows:
 
 
 Measurement of these indicators within OpenSAFELY has been performed in [this study]()
-## Existing Studies using OpenSAFELY
-* ["Towards a Lorem ipsum dolor sit amet, consectetur adipiscing elit. Smith et al, Journal of Boilerplate Studies 69:420"]()
-* ["Novel approaches to irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Jones et al, Journal of Boilerplate Studies 69:420"]()
+
+## Existing OpenSAFELY Studies
+### Inhaled corticosteroids and risk of COVID-19 death
+  * [GitHub Repository](https://github.com/opensafely/ics-research)
+  * Paper - [Schultze A, Walker AJ, MacKenna B, Morton CE, Bhaskaran K, Brown JP, Rentsch CT, Williamson E, Drysdale H, Croker R, Bacon S. Risk of COVID-19-related death among patients with chronic obstructive pulmonary disease or asthma prescribed inhaled corticosteroids: an observational cohort study using the OpenSAFELY platform. The Lancet Respiratory Medicine. 2020 Nov 1;8(11):1106-20.](https://doi.org/10.1016/S2213-2600(20)30415-X)
 
 ## References
 * [https://www.nhs.uk/conditions/asthma/]()
