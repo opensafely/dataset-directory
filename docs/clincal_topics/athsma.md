@@ -12,14 +12,14 @@ _(idea: populate using NHS API)_
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 ## Methodological Notes
-There are a number of means by which one may ascerain a patient having asthma. Those supported within OpenSAFELY are excplicit coding on an asthma diagnosis, prescription of asthma medication, and record of hospitalisation with asthma; represented as phenotypes [has_asthma_diagnosis](../phenotypes/has_asthma.md), [receiving_asthma_medication](../phenotypes/has_asthma.md), and [hospitalised_with_asthma](../phenotypes/has_asthma.md). Of these, [has_asthma_diagnosis](../phenotypes/has_asthma.md) is generally considered the most reliable, but consideration must also be given to resolved cases of (usually childhood) asthma. A combined phenotype of [has_asthma](../phenotypes/has_asthma.md) is provided which takes these into account and should suffice for most purposes.
+There are a number of means by which one may ascerain a patient having asthma. Those supported within OpenSAFELY are excplicit coding on an asthma diagnosis, prescription of asthma medication, and record of hospitalisation with asthma; represented as phenotypes [has_asthma_diagnosis](../derived_variables/has_asthma.md), [receiving_asthma_medication](../derived_variables/has_asthma.md), and [hospitalised_with_asthma](../derived_variables/has_asthma.md). Of these, [has_asthma_diagnosis](../derived_variables/has_asthma.md) is generally considered the most reliable, but consideration must also be given to resolved cases of (usually childhood) asthma. A combined phenotype of [has_asthma](../derived_variables/has_asthma.md) is provided which takes these into account and should suffice for most purposes.
 
 ## Phenotypes
-* [has_asthma](../phenotypes/has_asthma.md)
-* [receiving_asthma_medication](../phenotypes/receiving_asthma_medication.md)
-* [has_asthma_diagnosis](../phenotypes/has_asthma_diagnosis.md)
-* [hospitalised_with_asthma](../phenotypes/hospitalised_with_asthma.md)
-* [asthma_resolved](../phenotypes/asthma_resolved.md)
+* [has_asthma](../derived_variables/has_asthma.md)
+* [receiving_asthma_medication](../derived_variables/receiving_asthma_medication.md)
+* [has_asthma_diagnosis](../derived_variables/has_asthma_diagnosis.md)
+* [hospitalised_with_asthma](../derived_variables/hospitalised_with_asthma.md)
+* [asthma_resolved](../derived_variables/asthma_resolved.md)
 
 ## Codelists
 * [Asthma Admission Codes](https://www.opencodelists.org/codelist/primis-covid19-vacc-uptake/astadm/) ❓ _Signed-off_ | ✅ _Externally-verified_

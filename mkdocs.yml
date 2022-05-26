@@ -1,9 +1,10 @@
-site_name: Opensafely Phenotype Wiki
+site_name: Opensafely EHR Dataset Metadata Directory
 theme:
   name: material
   features:
     - content.code.annotate
 plugins:
+  - include-markdown
   - tags:
       tags_file: tags.md
 markdown_extensions:
