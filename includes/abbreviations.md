@@ -4,3 +4,5 @@
 *[NICE]: National Institute for Clinical Excellence
 *[EHR]: Electronic Health Record
 *[Draft]: This codelist has not yet been validated or signed off, and should not be considered ready for use
+*[ODS]: Organisation Data Service
+*[CCG]: Clinical Commissioning Group
